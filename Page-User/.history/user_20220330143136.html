@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="./vendor/node_modules/angular-material/angular-material.css" />
+  <script src="./vendor/AngularJS/node_modules/angular/angular.min.js"></script>
+</head>
+
+<body ng-app="user-app">
+  <header class="header" data-aos="slide-down" data-aos-duration="40000">
+    <a href="home.html" class="logo">
+      <img src="./images/logo-footer.png" alt="logo" />
+    </a>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="home.html">Trang Chủ</a></li>
+
+        <li><a href="course.html">Khóa Học</a></li>
+
+        <li><a href="contact.html">Liên Hệ</a></li>
+        <li>
+          <a href="#">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <ul>
+            <li><a href="user.html">Profile</a></li>
+            <li><a href="sign-up.html">Đăng Xuất</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--------------------------------------Profile-------------------------------------- -->
+
+  <div class="containers rounded bg-white mt-5 mb-5" data-aos="slide-down" data-aos-duration="40000">
+    <div class="row">
+      <div class="col-md-3 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <img class="rounded-circle mt-5" width="150px"
+            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" />
+          <span class="font-weight-bold">Đăng Nhân</span>
+          <span class="text-black-50">abc@mail.com</span><span> </span>
+        </div>
+      </div>
+      <div class="col-md-5 border-right">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="text-right">Thông Tin Cá Nhân</h4>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <label class="labels">Tên</label><input type="text" class="form-control" placeholder="first name"
+                value="" />
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Họ</label><input type="text" class="form-control" value="" placeholder="surname" />
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <label class="labels">Số Điện Thoại</label><input type="text" class="form-control"
+                placeholder="Nhập số điện thoại" value="" />
+            </div>
+
+            <div class="col-md-12">
+              <label class="labels">Email</label><input type="text" class="form-control" placeholder="Nhập email"
+                value="" />
+            </div>
+
+            <div class="col-md-12">
+              <label class="labels">Phòng Ban</label><input type="text" class="form-control" placeholder="Nhập Phòng"
+                value="" />
+            </div>
+          </div>
+
+          <div class="mt-5 text-center">
+            <button class="btn btn-primary profile-button" type="button" style="font-size: 13px">
+              Lưu Lại
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center experience">
+            <span>Các Chứng Chỉ</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Thêm
+              Chứng Chỉ</span>
+          </div>
+          <br />
+          <div class="col-md-12">
+            <label class="labels">Tên Chứng Chỉ</label><input type="text" class="form-control"
+              placeholder="Nhập Chứng Chỉ" value="" />
+          </div>
+          <br />
+          <div class="col-md-12">
+            <label class="labels">Nơi Học</label><input type="text" class="form-control" placeholder="Tên Nơi Cấp"
+              value="" />
+          </div>
+          <br>
+          <div class="col-md-12">
+            <label class="labels">Hình Bằng Cấp</label><input type="file" class="form-control" placeholder="Tên Nơi Cấp"
+              value="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =-------------------------------------hiện thị chứng chỉ-------------------------------------------- -->
+  <section class="heading" data-aos="slide-left" data-aos-duration="40000">
+    <h3>Chứng Chỉ</h3>
+  </section>
+
+  <section class="blog" data-aos="slide-left" data-aos-duration="40000" ng-controller="abcde">
+    <div class="box" ng-repeat="inside in insides">
+      <div class="images">
+        <img src="{{inside.img}}" alt="" />
+      </div>
+      <div class="content">
+        <div class="icons">
+          <a href="#"> <i class="fas fa-clock"></i> {{inside.dayStart}}</a>
+          <a href="#"> <i class="fas fa-user"></i> {{inside.teach}} </a>
+        </div>
+        <h3>{{inside.title}}</h3>
+        <p>{{inside.description}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------hiện khóa đã học-------------------------------------- -->
+  <section class="heading" data-aos="slide-left" data-aos-duration="40000">
+    <h3>Học Bên Trong Trường</h3>
+  </section>
+
+  <section class="blog" data-aos="slide-left" data-aos-duration="40000" ng-controller="abc">
+    <div class="box" ng-repeat="inside in insides">
+      <div class="images">
+        <img src="{{inside.img}}" alt="" />
+      </div>
+      <div class="content">
+        <div class="icons">
+          <a href="#"> <i class="fas fa-clock"></i> {{inside.dayStart}}</a>
+          <a href="#"> <i class="fas fa-user"></i> {{inside.teach}} </a>
+        </div>
+        <h3>{{inside.title}}</h3>
+        <p>{{inside.description}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------hiện khóa bên ngoài-------------------------------------- -->
+  <section class="heading" data-aos="slide-left" data-aos-duration="40000">
+    <h3> Học Bên Ngoài</h3>
+  </section>
+
+  <section class="blog" data-aos="slide-left" data-aos-duration="40000" ng-controller="abcd">
+    <div class="box" ng-repeat="outside in outsides">
+      <div class="images">
+        <img src="{{outside.img}}" alt="" />
+      </div>
+      <div class="content">
+        <div class="icons">
+          <a href="#"> <i class="fas fa-clock"></i> {{outside.dayStart}}</a>
+          <a href="#"> <i class="fas fa-user"></i> {{outside.teach}} </a>
+        </div>
+        <h3>{{outside.title}}</h3>
+        <p>{{outside.description}}</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+  <script src="js/script.js"></script>
+  <script src="./js/user.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="./vendor/node_modules/angular/angular.js"></script>
+  <script src="./vendor/node_modules/angular-aria/angular-aria.js"></script>
+  <script src="./vendor/node_modules/angular-animate/angular-animate.js"></script>
+  <script src="./vendor/node_modules/angular-messages/angular-messages.js"></script>
+  <script src="./vendor/node_modules/angular-material/angular-material.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+var app = angular.module("myapp", []);
+app.controller("viewCril", function($scope){
+    $scope.test = {};
+    $scope.index = -1;
+    $scope.save = function(){
+        $scope.listCourses.push(angular.copy($scope.test))
+    };
+    $scope.edit = function (index) {
+        $scope.index = index;
+        $scope.test = angular.copy($scope.listCourses[index]);
+    }
+    $scope.cancel = function() {
+        $scope.test = {};
+    }
+    $scope.listCourses = [
+        {
+            stt:"1",
+            nameCourse: "Angular",
+            statusCourse: "Done",
+            startDay: "30/03/2022",
+            endDay: "30/03/2024",
+            teach: "Nguyễn Đăng Nhân",
+            decription:"Nhanh Gọn Lẹ",
+            image:"",
+            edit: "Sửa",
+            delete: "Xóa"
+        }
+    ]
+})

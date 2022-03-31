@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa Học</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body ng-controller="myCtrl">
+
+    <!-- header section starts  -->
+
+    <header class="header" data-aos="slide-down" data-aos-duration="40000">
+
+        <a href="home.html" class="logo">
+            <img src="./images/logo-footer.png" alt="logo">
+        </a>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Trang Chủ</a></li>
+
+                <li><a href="course.html">Khóa Học</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                    <ul>
+                        <li><a href="user.html">Profile</a></li>
+                        <li><a href="sign-up.html">Đăng Xuất</a></li>
+                    </ul>
+
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <section class="heading">
+        <h3>Khoá Học</h3>
+        <p> <a href="home.html">Trang Chủ >></a>Khóa Luận</p>
+    </section>
+
+    <!-- course-1 section starts  -->
+    <div class="search-box">
+        <div class="input-box">
+            <input type="text" placeholder="Tìm Kiếm ..." ng-model="searching">
+        </div>
+    </div>
+
+    <div class="title-course">
+        <h2 style="margin-left: 12rem; font-size: 30px; padding-top: 5rem;">Khóa Học Hiện Có</h2>
+    </div>
+
+    <section class="teachers" data-aos="fade-left" data-aos-duration="40000">
+
+
+        <div class="box" dir-paginate="course in courses | filter:searching | itemsPerPage:4">
+
+            <div class="image">
+                <img src="{{course.image}}" alt="">
+                <div class="share">
+                    <a href="course-detail.html">
+                        <button>Chi Tiết</button>
+                    </a>
+
+                    <div class="status">
+                        {{course.statusCourse}} <br>
+                        {{course.dayStart}}
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h3>{{course.title}}</h3>
+                <span>{{course.teach}}</span>
+            </div>
+
+        </div>
+    </section>
+    <dir-pagination-controls class="pagination"></dir-pagination-controls>
+
+
+
+    <!-- course-1 section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Lối Tắt</h3>
+                <a href="home.html"> Trang Chủ</a>
+
+                <a href="course.html"> Khóa Học</a>
+                <a href="blog.html"> Giới Thiệu</a>
+                <a href="contact.html"> Liên Hệ</a>
+            </div>
+
+            <div class="box">
+                <h3>Địa Chỉ</h3>
+                <a href="#"> Cơ sở chính: 69/68 Đặng Thùy Trâm, P. 13, Q. Bình Thạnh,
+                    TP. HCM</a>
+                <a href="#"> Cơ sở 1: 45 Nguyễn Khắc Nhu, P. Cô Giang, Q.1, TP.
+                    HCM</a>
+                <a href="#"> Cơ sở 2: 233A Phan Văn Trị, P.11, Q. Bình Thạnh, TP.
+                    HCM</a>
+
+            </div>
+
+            <div class="box" style="margin-left: 25rem;">
+                <h3>Mạng Xã Hội</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="#"> <i class="fas fa-envelope"></i> email</a>
+                <a href="#"> <i class="fas fa-globe"></i> website </a>
+                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+
+            </div>
+
+        </div>
+
+        <div class="credit"> created by <span>Van Lang University</span> | all rights reserved! </div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- custom js file link  -->
+    <script src="js/product.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dirPagination.js"></script>
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

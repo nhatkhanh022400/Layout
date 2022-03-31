@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Signup</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <div class="bg-signup">
+    <div class="signup" data-aos="zoom-in-down">
+      <div class="logo">
+        <img src="./images/logo-01.png" alt="logo">
+      </div>
+      <h1 class="signup-heading">Sign up</h1>
+      <button class="signup-social">
+        <i class="fa-brands fa-microsoft" style="font-size: 30px;"></i>
+        <span class="signup-social-text">Sign up with Microsoft Office</span>
+      </button>
+      <div class="signup-or"><span>Or</span></div>
+      <form action="#" class="signup-form" autocomplete="off">
+        <label for="fullname" class="signup-label">Username or Email</label>
+        <input type="text" id="fullname" class="signup-input" placeholder="Ex: johndoe@gmai.com">
+        <label for="email" class="signup-label">Password</label>
+        <input type="password" id="password" class="signup-input" placeholder="Password">
+        <button class="signup-submit">Sign up</button>
+      </form>
+      <p class="signup-already">
+        <span>Already have an account ?</span>
+        <a href="#" class="signup-login-link">Login</a>
+      </p>
+    </div>
+  </div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
