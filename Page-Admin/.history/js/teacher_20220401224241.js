@@ -1,5 +1,5 @@
 var app = angular.module("myapp", []);
-app.controller("viewCril", function (Excel, $timeout, $scope) {
+app.controller("viewCril", function ($scope) {
     $scope.test = {};
     $scope.index = -1;
 
@@ -31,6 +31,7 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
             department: "Khoa CNTT",
         }
     ]
+
     //Xuất file Excel
 
     $scope.exportToExcel = function (tableId) { // ex: '#my-table'
@@ -38,7 +39,6 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
         $timeout(function () { location.href = exportHref; }, 100); // trigger download
     }
 })
-
 
 
 app.factory('Excel', function ($window) {
@@ -55,8 +55,4 @@ app.factory('Excel', function ($window) {
         }
     };
 })
-
-
-
-
 

@@ -115,7 +115,7 @@
               </thead>
               <tbody>
                 <tr ng-repeat="course in listCourses | filter: searching">
-                  <td>{{$index + 1}}</td>
+                  <td>{{$nidex + 1}}</td>
                   <td>{{course.name}}</td>
                   <td>{{course.phone}}</td>
                   <td>{{course.email}}</td>
@@ -152,7 +152,7 @@
 
                   <div class="form-group">
                     <label for="inputPhone">Số Điện Thoại</label>
-                    <input ng-model="test.phone" type="tel" class="form-control" placeholder="Nhập SĐT"
+                    <input ng-model="test.phone" type="phone" class="form-control" placeholder="Nhập SĐT"
                       id="inputPhone">
                   </div>
 

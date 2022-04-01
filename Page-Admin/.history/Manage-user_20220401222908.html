@@ -17,7 +17,6 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/templatemo-style.css" rel="stylesheet">
   <script src="./vendor/AngularJS/node_modules/angular/angular.min.js"></script>
-  <link rel="icon" href="./images/logo-vlu-removebg-preview.png" type="image/png" >
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,12 +81,7 @@
           <input ng-model="searching" type="text" class="form-control" placeholder="Search" name="srch-term"
             id="srch-term" style="width: 300px;">
         </div>
-
-        <a href="#">
-          <button
-          ng-click="exportToExcel('#tableToExport')" style="display: inline-block;  border-radius: 5px; background-color:#39adb4; color: white; padding: 10px; border: transparent; ">Xuất
-            Danh Sách Ra Excel</button>
-        </a>
+        <input ng-click="exportToExcel('#tableToExport')" style="display: inline-block;  border-radius: 5px; background-color:#39adb4; color: white; padding: 10px; border: transparent; " type="button" value="Export to Excel"/>
 
         
       </form>
