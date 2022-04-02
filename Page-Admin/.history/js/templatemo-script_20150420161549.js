@@ -1,4 +1,9 @@
+/*
+ *	www.templatemo.com
+ *******************************************************/
 
+/* HTML document is loaded. DOM is ready. 
+-----------------------------------------*/
 $(document).ready(function(){
 
 	/* Mobile menu */
