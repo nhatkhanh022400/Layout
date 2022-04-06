@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản Lý Khóa Học</title>
+    <meta name="description" content="">
+    <meta name="author" content="templatemo">
+    <!-- 
+    Visual Admin Template
+    http://www.templatemo.com/preview/templatemo_455_visual_admin
+    -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet'
+        type='text/css'>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-style.css" rel="stylesheet">
+    <script src="./vendor/AngularJS/node_modules/angular/angular.min.js"></script>
+    <link rel="icon" href="./images/logo-vlu-removebg-preview.png" type="image/png">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <!-- Left column -->
+    <div class="templatemo-flex-row">
+        <div class="templatemo-sidebar">
+            <header class="templatemo-site-header">
+                <a href="Trang Chủ.html">
+                    <img src="images/logo-footer.png" alt="">
+                </a>
+            </header>
+            <div class="profile-photo-container">
+                <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">
+                <div class="profile-photo-overlay"></div>
+            </div>
+            <!-- Search box -->
+
+            <div class="mobile-menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+            <nav class="templatemo-left-nav">
+                <ul>
+
+
+                    <li><a href="#" class="active"><i class="fa fa-database fa-fw"></i>Quản Lý Khóa Học</a></li>
+
+                    <li><a href="Manage-user.html"><i class="fa fa-users fa-fw"></i>Quản Lý Người Dùng</a></li>
+                    <li><a href="Manage-teacher.html"><i class="fa fa-sliders fa-fw"></i>Quản Lý Giảng Viên</a></li>
+                    <li><a href="Update-infor.html"><i class="fa fa-sliders fa-fw"></i>Cập Nhật Thông Tin</a>
+                    </li>
+                    <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+
+        <div class="templatemo-content col-1 light-gray-bg">
+            <div class="templatemo-top-nav-container">
+                <div class="row">
+                    <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                        <ul class="text-uppercase">
+                            <li><a href="" class="active">Thông Tin</a></li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
+
+            <div class="templatemo-content-container">
+                <div class="templatemo-content-widget white-bg">
+                    <h2 class="margin-bottom-10">Thống Kê Theo Tháng</h2>
+
+
+
+
+                    <div class="panel panel-default no-border">
+                        <div class="panel-heading border-radius-10">
+                            <h2>Biểu Đồ Thống Kê</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="templatemo-flex-row flex-content-row">
+                                <div class="col-1">
+                                    <div id="area_chart_div" class="templatemo-chart"></div>
+                                    <h3 class="text-center margin-bottom-5">Company Performance</h3>
+                                    <p class="text-center">Fusce mi lacus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="templatemo-flex-row flex-content-row templatemo-overflow-hidden">
+                <!-- overflow hidden for iPad mini landscape view-->
+                <div class="col-1 templatemo-overflow-hidden">
+                    <div class="templatemo-content-widget white-bg templatemo-overflow-hidden">
+                        <i class="fa fa-times"></i>
+                        <div class="templatemo-flex-row flex-content-row">
+                            <div class="col-1 col-lg-6 col-md-12">
+                                <h2 class="text-center">Modular<span class="badge">new</span></h2>
+                                <div id="pie_chart_div" class="templatemo-chart"></div> <!-- Pie chart div -->
+                            </div>
+                            <div class="col-1 col-lg-6 col-md-12">
+                                <h2 class="text-center">Interactive<span class="badge">new</span></h2>
+                                <div id="bar_chart_div" class="templatemo-chart"></div> <!-- Bar chart div -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/templatemo-script.js"></script>
+        <script src="js/loading.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script>
+            google.load('visualization', '1.0', { 'packages': ['corechart'] });
+
+            // Set a callback to run when the Google Visualization API is loaded.
+            google.setOnLoadCallback(drawChart1);
+
+            // Callback that creates and populates a data table,
+            // instantiates the pie chart, passes in the data and
+            // draws it.
+            function drawChart1() {
+
+                // Create the data table.
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Topping');
+                data.addColumn('number', 'Slices');
+                data.addRows([
+                    ['Mushrooms', 3],
+                    ['Onions', 1],
+                    ['Olives', 1],
+                    ['Zucchini', 1],
+                    ['Pepperoni', 2]
+                ]);
+
+                // Set chart options
+                var options = { 'title': 'How Much Pizza I Ate Last Night' };
+
+                // Instantiate and draw our chart, passing in some options.
+                var pieChart = new google.visualization.PieChart(document.getElementById('pie_chart_div'));
+                pieChart.draw(data, options);
+
+                var barChart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
+                barChart.draw(data, options);
+            }
+            
+        
+
+
+
+
+
+
+
+
+
+            /* Gauage 
+            --------------------------------------------------*/
+            var areaData;
+            var areaOptions;
+            var areaChart;
+
+            google.load("visualization", "1", { packages: ["corechart"] });
+            google.setOnLoadCallback(drawChart);
+
+            $(document).ready(function () {
+                if ($.browser.mozilla) {
+                    //refresh page on browser resize
+                    // http://www.sitepoint.com/jquery-refresh-page-browser-resize/
+                    $(window).bind('resize', function (e) {
+                        if (window.RT) clearTimeout(window.RT);
+                        window.RT = setTimeout(function () {
+                            this.location.reload(false); /* false to get page from cache */
+                        }, 200);
+                    });
+                } else {
+                    $(window).resize(function () {
+                        drawCharts();
+                    });
+                }
+            });
+
+
+
+            /* Timeline
+            --------------------------------------------------*/
+
+            /* Area Chart 
+            --------------------------------------------------*/
+            function drawChart() {
+                areaData = google.visualization.arrayToDataTable([
+                    ['Tháng', 'Đã Hoàn Thành', 'Đang Học'],
+                    ['Tháng 1', 100, 400],
+                    ['Tháng 2', 1030, 500],
+                    ['Tháng 3', 900, 450],
+                    ['Tháng 4', 600, 670],
+                    ['Tháng 5', 550, 800],
+                    ['Tháng 6', 200, 300],
+                    ['Tháng 7', 700, 789],
+                    ['Tháng 8', 750, 90],
+                    ['Tháng 9', 100, 470],
+                    ['Tháng 10', 1170, 460],
+                    ['Tháng 11', 660, 1120],
+                    ['Tháng 12', 1030, 540]
+                ]);
+
+                areaOptions = {
+                    title: 'Biểu Đồ Thống Kê Tình Trạng Khóa Học Theo Tháng',
+                    hAxis: { title: 'Tháng', titleTextStyle: { color: '#333' } },
+                    vAxis: { minValue: 0 }
+                };
+
+                areaChart = new google.visualization.AreaChart(document.getElementById('area_chart_div'));
+                areaChart.draw(areaData, areaOptions);
+            } // End function drawChart
+
+            function drawCharts() {
+                gaugeChart.draw(gaugeData, gaugeOptions);
+                timelineChart.draw(timelineDataTable, timelineOptions);
+                areaChart.draw(areaData, areaOptions);
+            }
+
+        </script>
+</body>
+
+</html>
