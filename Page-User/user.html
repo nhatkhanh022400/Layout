@@ -50,96 +50,68 @@
 
   <!--------------------------------------Profile-------------------------------------- -->
 
-  <div class="containers rounded bg-white mt-5 mb-5" data-aos="slide-down" data-aos-duration="40000">
-    <div class="row">
+  <div class="containers rounded bg-white mt-5 mb-5 "
+    data-aos="slide-down" data-aos-duration="40000">
+    <div class="row d-flex justify-content-center align-items-center">
       <div class="col-md-3 border-right">
         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
           <img class="rounded-circle mt-5" width="150px"
             src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" />
-          <span class="font-weight-bold">Đăng Nhân</span>
-          <span class="text-black-50">abc@mail.com</span><span> </span>
+          <span class="font-weight-bold">Trần Nhật Khánh</span>
+          <span class="text-black-50">khanh.187it20849@vanlanguni.vn</span><span> </span>
         </div>
       </div>
       <div class="col-md-5 border-right">
-        <div class="p-3 py-5">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="text-right">Thông Tin Cá Nhân</h4>
+        <div class="p-3">
+          <div class="d-flex justify-content-between align-items-center mb-3 fs-1">
+            <h1 class="text-right">Thông Tin Cá Nhân</h1>
           </div>
 
-          <div class="row mt-2">
-            <div class="col-md-6">
-              <label class="labels">Tên</label><input type="text" class="form-control" placeholder="first name"
-                value="" />
-            </div>
-            <div class="col-md-6">
-              <label class="labels">Họ</label><input type="text" class="form-control" value="" placeholder="surname" />
+          <div class="right">
+            <div class="info_data">
+
+              <div class="data">
+                <h4>Họ và Tên</h4>
+                <p>Trần Nhật Khánh</p>
+              </div>
+
+              <div class="data">
+                <h4>Email</h4>
+                <p>khanh.187it20849@vanlanguni.vn</p>
+              </div>
+
+              <div class="data">
+                <h4>Số Điện Thoại</h4>
+                <p>0001-213-998761</p>
+              </div>
+
+              <div class="data">
+                <h4>Phòng Ban</h4>
+                <p>Khoa Công Nghệ Thông Tin</p>
+              </div>
+
+
             </div>
           </div>
+        </div>
 
-          <div class="row mt-3">
-            <div class="col-md-12">
-              <label class="labels">Số Điện Thoại</label><input type="text" class="form-control"
-                placeholder="Nhập số điện thoại" value="" />
-            </div>
-
-            <div class="col-md-12">
-              <label class="labels">Email</label><input type="text" class="form-control" placeholder="Nhập email"
-                value="" />
-            </div>
-
-            <div class="col-md-12">
-              <label class="labels">Phòng Ban</label><input type="text" class="form-control" placeholder="Nhập Phòng"
-                value="" />
-            </div>
-          </div>
-
-          <div class="mt-5 text-center">
+        <div class="text-center">
+          <a href="edit-user.html">
             <button class="btn btn-primary profile-button" type="button" style="font-size: 13px">
-              Cập Nhật 
+              Chỉnh Sửa
             </button>
-          </div>
+          </a>
+          
+        </div>
 
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-3 py-5">
-          <div class="col-md-12">
-            <label class="labels">Tên Khóa Học</label><input  type="text" class="form-control"
-              placeholder="Nhập Tên Khóa Học" value="" />
-          </div>
-          <br />
-          <div class="col-md-12">
-            <label class="labels">Nơi Học</label><input  type="text" class="form-control" placeholder="Tên Nơi Cấp"
-              value="" />
-          </div>
-          <br>
-          <div class="col-md-12">
-            <label class="labels">Người Dạy</label><input  type="text" class="form-control" placeholder="Tên Người Dạy"
-              value="" />
-          </div>
-          <br>
-          <div class="col-md-12">
-            <label class="labels">Thời Gian Học</label><input type="text" class="form-control" placeholder="Thời Gian"
-              value="" />
-          </div>
-          <br>
-          <div class="col-md-12">
-            <label class="labels">Ảnh Khóa Học</label><input type="file" class="form-control" 
-              value="" />
-          </div>
-          <br>
-          <div class="mt-5 text-center">
-            <button class="btn btn-primary profile-button" type="submit" style="font-size: 13px">
-              Thêm Khóa Học
-            </button>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
 
-  
-  
+  </div>
+ 
+
+
+
 
   <!-- -------------------------------------------hiện khóa đã học-------------------------------------- -->
   <section class="heading" data-aos="slide-left" data-aos-duration="40000">
@@ -157,13 +129,19 @@
           <a href="#"> <i class="fas fa-user"></i> {{inside.teach}} </a>
         </div>
         <h3>{{inside.title}}</h3>
-       </div>
+      </div>
     </div>
   </section>
 
   <!-- -------------------------------------------hiện khóa bên ngoài-------------------------------------- -->
   <section class="heading" data-aos="slide-left" data-aos-duration="40000">
     <h3> Học Bên Ngoài</h3>
+    <a href="edit-user.html">
+      <button class="btn btn-primary profile-button" type="submit" style="font-size: 13px">
+        Thêm Khóa Học
+      </button>
+    </a>
+
   </section>
 
   <section class="blog" data-aos="slide-left" data-aos-duration="40000" ng-controller="abcd">
