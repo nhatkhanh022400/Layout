@@ -1250,6 +1250,13 @@ select {
   z-index: 10000;
 }
 
+
+md-toast.md-default-theme .md-toast-content, md-toast .md-toast-content{
+  background-color: gray;
+  color: white;
+  border-radius: 15px;
+}
+
 /* =========================================================reposive========================================= */
 
 @media (max-width: 1200px) {

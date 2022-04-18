@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <link rel="shortcut icon" href="./images/logo-vlu-removebg-preview.png" />
+    <link rel="shortcut icon" href="./images/logo-vlu-removebg-preview.png" />
+    <link rel="stylesheet" href="./vendor/sweetalert/node_modules/sweetalert2/dist/sweetalert2.min.css">
+    
 
 </head>
 
@@ -24,7 +26,7 @@
 
     <!-- header section starts  -->
 
-    <header class="header" >
+    <header class="header">
 
         <a href="home.html" class="logo">
             <img src="./images/logo-footer.png" alt="logo">
@@ -62,15 +64,15 @@
 
 
     <!-- -----------------------------------------course-detail---------------------------------- -->
-    <div class="container" data-aos="fade-left" data-aos-duration="40000">
+    <div class="container" data-aos="fade-left" data-aos-duration="40000" >
 
         <div class="profile">
             <img src="images/icon-6.png" alt="">
             <h1>ReactJS từ cơ bản cho đến nâng cao</h1>
-            
+
         </div>
 
-        <div class="information" data-aos="fade-left" data-aos-duration="40000">
+        <div class="information" data-aos="fade-left" data-aos-duration="40000" >
 
             <div class="about">
                 <h3 class="titling">Mô Tả</h3>
@@ -81,41 +83,16 @@
                     quidem? Possimus, dolore. Placeat, aut!</p>
                 <div class="box-container">
                     <div class="boxing">
-                        <h3> <span>Ngày Bắt Đầu :  </span> 24/03/2021 </h3>
-                        <h3> <span> Trạng Thái :  </span> Đã Hoàn Thành </h3>
-                        <h3> <span> Thời hạn : </span> 3 tháng  </h3>
+                        <h3> <span> Ngày Bắt Đầu : </span> 24/03/2021 </h3>
+                        <h3> <span> Trạng Thái : </span> Đã Hoàn Thành </h3>
+                        <h3> <span> Ngày Kết Thúc : </span> 24/06/2021 </h3>
                         <h3> <span> Giảng Viên : </span> Nguyễn Văn A </h3>
-                        <h3> <span> Đến từ :  </span> Khoa CNTT </h3>
+                        <h3> <span> Đến từ : </span> Khoa CNTT </h3>
                     </div>
 
                 </div>
-            </div>
+            </div><br><br>
 
-            <div class="services" data-aos="fade-left" data-aos-duration="40000">
-                <h3 class="titling">Yêu Cầu</h3>
-                <div class="box-container">
-                    <div class="boxing">
-                        <img src="images/icon-1.png" alt="">
-                        <h3>HTML 5</h3>
-                    </div>
-                    <div class="boxing">
-                        <img src="images/icon-2.png" alt="">
-                        <h3>CSS 3</h3>
-                    </div>
-                    <div class="boxing">
-                        <img src="images/icon-3.png" alt="">
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="boxing">
-                        <img src="images/icon-4.png" alt="">
-                        <h3>SASS</h3>
-                    </div>
-                    <div class="boxing">
-                        <img src="images/icon-5.png" alt="">
-                        <h3>JQuery</h3>
-                    </div>
-                 </div>
-            </div>
 
             <div class="contact" data-aos="fade-left" data-aos-duration="40000">
                 <h3 class="titling">Thông Tin Giảng Viên</h3>
@@ -139,8 +116,7 @@
                 </div>
             </div>
 
-            <button class="btn">Tham Gia</button>
-
+            <button class="btn">Đăng Ký</button>
         </div>
 
     </div>
@@ -158,7 +134,7 @@
                 <a href="home.html">Trang Chủ</a>
 
                 <a href="course.html"> Khóa Học </a>
-                
+
                 <a href="contact.html">Liên Hệ</a>
             </div>
 
@@ -192,11 +168,23 @@
 
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
-    <script src="js/listTeacher.js"></script>
+    
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+   <script src="./vendor/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+   <script src="./vendor/sweetalert/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+   <script>
+       document.getElementById('btn1').addEventListener('click', (Event) => {
+            Event.preventDefault();
+            Swal.fire(
+                'Chúc Mừng!',
+                'Bạn đã đăng kí thành công!',
+                'success'
+            )
+        })
+   </script>
 
 </body>
 

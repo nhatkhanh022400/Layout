@@ -17,6 +17,7 @@
 
     <script src="./vendor/AngularJS/node_modules/angular/angular.min.js"></script>
     <link rel="shortcut icon" href="./images/logo-vlu-removebg-preview.png" />
+    <link rel="stylesheet" href="./vendor/sweetalert/node_modules/sweetalert2/dist/sweetalert2.min.css">
 </head>
 
 <body ng-app="user-app">
@@ -98,11 +99,11 @@
                    
 
                     <div class="mt-5 text-center">
-                        <a href="user.html">
-                            <button class="btn btn-primary profile-button" type="button" style="font-size: 13px">
+                        
+                            <button id="btn1" class="btn btn-primary profile-button" type="button" style="font-size: 13px">
                                 Cập Nhật
                             </button>
-                        </a>
+                        
                         
                     </div>
 
@@ -144,11 +145,11 @@
                     </div>
                     <br>
                     <div class="mt-5 text-center">
-                        <a href="user.html">
-                            <button class="btn btn-primary profile-button" type="submit" style="font-size: 13px">
+                        
+                            <button id="btn2" class="btn btn-primary profile-button" type="submit" style="font-size: 13px">
                                 Thêm Khóa Học
                             </button>
-                        </a>
+                        
                         
                     </div>
                 </div>
@@ -163,6 +164,24 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script src="./vendor/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="./vendor/sweetalert/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script>
+        document.getElementById('btn1').addEventListener('click', (Event) => {
+             Event.preventDefault();
+             Swal.fire(
+                 'Cập Nhật Thành Công',
+                )
+         });
+
+
+         document.getElementById('btn2').addEventListener('click', (Event) => {
+             Event.preventDefault();
+             Swal.fire(
+                 'Thêm khóa học thành công',
+                )
+         })
     </script>
 </body>
 
