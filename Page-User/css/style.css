@@ -538,9 +538,10 @@ select {
 .teachers .box .image {
   overflow: hidden;
   height: 32rem;
-  width: 100%;
+  width: 292.69px;
   position: relative;
   border-radius: 1rem;
+  margin: 0 auto;
 }
 
 .teachers .box .image .share {
