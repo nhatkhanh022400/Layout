@@ -822,7 +822,7 @@ input[type="radio"] {
 
 .btn{
  
-  padding: 10px 15px;
+  
   background-color: #f5f5f5;
   text-decoration: none;
   color: #000;
@@ -833,7 +833,7 @@ input[type="radio"] {
 }
 
 .btn:hover{
-  background-color: #000;
+  background-color: #39adb4;
   color: #f5f5f5;
 }
 

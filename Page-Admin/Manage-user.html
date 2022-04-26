@@ -70,7 +70,7 @@
         <div class="row">
           <nav class="templatemo-top-nav col-lg-12 col-md-12">
             <ul class="text-uppercase">
-              <li><a href="" class="active">Thông Tin</a></li>
+              <li><a href="" class="active" style="font-size: 25px; font-weight: bold;">Thông Tin</a></li>
 
 
             </ul>
@@ -96,7 +96,8 @@
         <div class="panel panel-default table-responsive">
           <table class="table table-striped table-bordered templatemo-user-table" >
             <thead>
-              <tr>
+              <!-- sửa  -->
+              <tr style="text-align: center;">
                 <td><a href="" class="white-text templatemo-sort-by">STT</a></td>
                 <td><a href="" class="white-text templatemo-sort-by">Họ và Tên </a></td>
 
@@ -105,7 +106,7 @@
 
                 <td>Phòng Ban</td>
                 <td><a href="" class="white-text templatemo-sort-by">Hình Ảnh</a></td>
-                <td>Sửa</td>
+                
                 <td>Xóa</td>
               </tr>
             </thead>
@@ -117,8 +118,8 @@
                 <td>{{course.email}}</td>
                 <td>{{course.department}}</td>
                 <td><input type="image"></td>
-                <td><a ng-click="edit($index)" href="#add-edit" class="templatemo-edit-btn">Sửa</a></td>
-                <td><a ng-click="delete()" href="" class="templatemo-edit-btn">Xóa</a></td>
+                
+                <td style="text-align: center;"><a ng-click="delete()" href="" class="templatemo-edit-btn">Xóa</a></td>
               </tr>
 
             </tbody>
@@ -130,62 +131,7 @@
 
     <!-- ===============================pop-up======================================================== -->
 
-    <section id="add-edit">
-      <div class="templatemo-flex-row flex-content-row">
-        <div class="col-1">
-          <div class="panel panel-default margin-10">
-            <div class="panel-heading">
-              <h2 class="text-uppercase">Thêm Người Dùng</h2>
-            </div>
-            <div class="panel-body">
-              <form Khoa CNTT="index.html" class="templatemo-login-form">
-                <div class="form-group">
-                  <label for="inpuName">Họ và Tên</label>
-                  <input ng-model="test.name" type="text" class="form-control" id="inputName"
-                    placeholder="Nhập Họ và Tên">
-                </div>
-
-
-
-                <div class="form-group">
-                  <label for="inputPhone">Số Điện Thoại</label>
-                  <input ng-model="test.phone" type="phone" class="form-control" placeholder="Nhập SĐT" id="inputPhone">
-                </div>
-
-                <div class="form-group">
-                  <label for="inputEmail">Email</label>
-                  <input ng-model="test.email" type="email" class="form-control" id="inputEmail"
-                    placeholder="Nhập Email">
-                </div>
-
-
-
-                <div class="form-group">
-                  <label for="inputImage">Hình Ảnh</label>
-                  <input type="file" class="form-control" id="inputImage" placeholder="Nhập Hình Ảnh">
-                </div>
-
-                <div class="form-group">
-                  <label for="inputDepartment">Phòng Ban</label>
-                  <input ng-model="test.department" type="text" class="form-control" id="inputDepartment"
-                    placeholder="Nhập Phòng Ban">
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="templatemo-blue-button">
-                    <a href="#" ng-click="update()" style="color: white;">Cập Nhật</a>
-                  </button>
-
-
-                  <button class="templatemo-blue-button" type="submit">
-                    <a href="#" ng-click="cancel()" style="color: white;">Cancel</a>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+   
 
     <!-- JS -->
     <script src="./js/user.js"></script>

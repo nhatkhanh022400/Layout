@@ -71,7 +71,7 @@
 
           <nav class="templatemo-top-nav col-lg-12 col-md-12">
             <ul class="text-uppercase">
-              <li><a href="" class="active">Thông Tin</a></li>
+              <li><a href="" class="active" style="font-size: 25px; font-weight: bold;">Thông Tin</a></li>
 
 
             </ul>
@@ -104,8 +104,10 @@
           <div class="templatemo-content-widget no-padding ">
             <div class="panel panel-default table-responsive">
               <table class="table table-striped table-bordered templatemo-user-table">
-                <thead>
-                  <tr>
+                <thead>  
+                  <!-- tao  đã sửa chỗ này
+                   -->
+                  <tr style="text-align: center;"> 
                     <td>STT</td>
                     <td>Tên Khóa Đào Tạo </td>
                     <td>Trạng Thái</td>
@@ -116,8 +118,6 @@
                     <td>SĐT </td>
                     <td>Email </td>
                     <td>Danh Sách Học Viên </td>
-                    <td>Hình Ảnh</td>
-
                     <td>Sửa</td>
                     <td>Xóa</td>
                   </tr>
@@ -129,13 +129,14 @@
                     <td>{{course.statusCourse}}</td>
                     <td>{{course.startDay | date:"dd/MM/yyyy"}}</td>
                     <td>{{course.endDay | date:"dd/MM/yyyy"}}</td>
-                    <td>{{course.decription}}</td>
+                    <td style=" display: -webkit-box; height: 25px; width: 100px;-webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; ">
+                      {{course.decription}}</td>
                     <td>{{course.teach}}</td>
                     <td>{{course.sdt}}</td>
                     <td>{{course.email}}</td>
                     <td>{{course.list}}</td>
 
-                    <td>{{test.image}}</td>
+                    
 
                     <td><a ng-click="edit($index)" href="#add-edit" class="templatemo-edit-btn">Sửa</a></td>
                     <td><a ng-click="delete()" href="" class="templatemo-edit-btn">Xóa</a></td>
@@ -167,10 +168,15 @@
                 <input ng-model="test.nameCourse" type="text" class="form-control" id="inputName"
                   placeholder="Nhập Tên Khóa Đào Tạo">
               </div>
-
+              <!-- tao  đã sửa chỗ này
+                   -->
               <div class="form-group">
                 <label for="inputStatus">Trạng Thái Khóa Đào Tạo</label>
-                <input ng-model="test.statusCourse" type="text" class="form-control" placeholder="Nhập Trạng Thái">
+                <select ng-model="test.statusCourse" class="form-control">
+                  <option value="0">Đang diễn ra</option>
+                  <option value="1">Đã hoàn thành</option>
+                  <option value="2">Đăng ký</option>
+                </select>
               </div>
 
               <div class="form-group">
@@ -185,32 +191,29 @@
                   placeholder="Nhập Ngày Kết Thúc">
               </div>
 
-              <div class="form-group">
-                <label for="inputDer">Mô Tả</label>
-                <input ng-model="test.decription" type="text" class="form-control" id="inputDer"
-                  placeholder="Nhập Mô Tả">
-              </div>
-
               
               <div class="form-group">
                 <label for="inputPassword">Giảng Viên</label>
                 <input ng-model="test.teach" type="text" class="form-control" id="inputPassword"
                   placeholder="Nhập Giảng Viên">
               </div>
+              <!-- tao  đã sửa chỗ này
+                   -->
 
               <div class="form-group">
-                <label for="inputSDT">SĐT</label>
-                <input ng-model="test.sdt" type="text" class="form-control" id="inputSDT"
-                  placeholder="Nhập SĐT">
+                <label for="inputImage">Hình Ảnh</label>
+                <input ng-model="test.image" type="file" class="form-control" i
+                 >
               </div>
 
               <div class="form-group">
-                <label for="inputemail">Email</label>
-                <input ng-model="test.email" type="email" class="form-control" id="inputemail"
-                  placeholder="Nhập Email">
+                <label for="inputDer">Mô Tả</label>
+                <textarea ng-model="test.decription" type="text" class="form-control" id="inputDer"
+                  placeholder="Nhập Mô Tả">
+                </textarea>
               </div>
 
-              <div class="form-group">
+             <div class="form-group">
 
                 <button ng-click="save()" type="submit" class="templatemo-blue-button">
                   <a href="#" style="color: white;">Thêm</a>
