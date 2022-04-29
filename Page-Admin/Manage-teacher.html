@@ -172,23 +172,35 @@
 
                   <div class="form-group">
                     <label for="inputImage">Hình Ảnh</label>
-                    <input type="file" class="form-control" id="inputImage" placeholder="Nhập Hình Ảnh">
+                    <!-- <input type="file" id="inputImage" name="inputImage"> -->
+                    <div class="avatar-wrapper">
+                      <img class="profile-pic" src="" />
+                      <div class="upload-button">
+                        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                      </div>
+                      <input class="file-upload" type="file" accept="image/*" />
+                    </div>
+
+
                   </div>
 
 
 
                   <div class="form-group">
-                    <button id="add" onclick="closeForm()" ng-click="save()" style="color: white;" type="submit" class="templatemo-blue-button">
+                    <button id="add" onclick="closeForm()" ng-click="save()" style="color: white;" type="submit"
+                      class="templatemo-blue-button">
                       Thêm
                       <!-- <a href="#">Thêm</a> -->
                     </button>
 
-                    <button id="update" onclick="closeForm()" ng-click="update()" style="color: white;" type="submit" class="templatemo-blue-button">
+                    <button id="update" onclick="closeForm()" ng-click="update()" style="color: white;" type="submit"
+                      class="templatemo-blue-button">
                       Cập Nhật
                     </button>
 
-                    <button class="templatemo-blue-button" type="submit" onclick="closeForm()" ng-click="cancel()" style="color: white;">
-                     Cancel
+                    <button class="templatemo-blue-button" type="submit" onclick="closeForm()" ng-click="cancel()"
+                      style="color: white;">
+                      Cancel
                     </button>
                   </div>
                 </form>
@@ -204,8 +216,32 @@
       <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> <!-- jQuery -->
       <script type="text/javascript" src="js/templatemo-script.js"></script> <!-- Templatemo Script -->
       <script>
+        $(document).ready(function () {
+
+          var readURL = function (input) {
+            if (input.files && input.files[0]) {
+              var reader = new FileReader();
+
+              reader.onload = function (e) {
+                $('.profile-pic').attr('src', e.target.result);
+              }
+
+              reader.readAsDataURL(input.files[0]);
+            }
+          }
+
+          $(".file-upload").on('change', function () {
+            readURL(this);
+          });
+
+          $(".upload-button").on('click', function () {
+            $(".file-upload").click();
+          });
+        });
         getAPI();
       </script>
+
+
 
 </body>
 

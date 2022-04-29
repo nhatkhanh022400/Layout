@@ -3,6 +3,8 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
     $scope.test = {};
     $scope.index = -1;
 
+
+
     // add
     $scope.save = function () {
         $scope.listCourses.push(angular.copy($scope.test))
@@ -17,8 +19,10 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
     }
     // delete
     $scope.delete = function () {
-        $scope.listCourses.splice($scope.test);
+        $scope.listCourses.splice($scope.test.id);
     }
+
+
     $scope.cancel = function () {
         $scope.test = {};
     }
@@ -36,6 +40,55 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
 
     $scope.listCourses = [
         {
+            id: "1",
+            nameCourse: "Cngular",
+            statusCourse: "Done",
+            startDay: "30/03/2022",
+            endDay: "30/03/2022",
+            // teach: teachers.name,
+            listLearner: "fsdhfjdshfhdskfjhdsjhfjkdshfkdjshfkjdhsjfhhfjdshfkjsdhfkjhdskjfhdjsfjkdshfkjsdhfkjhsdkjfhkjdshfkjdshfjkhdsjkfhdsfjhkdjshfkjds",
+            decription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            sdt: "012345678",
+            email: "abc@gmail.com",
+            list: "nguyễn văn a-187it2345",
+            image: "../images/logo-01.png"
+
+        },
+
+        {
+            id: "2",
+            nameCourse: "Dngular",
+            statusCourse: "Done",
+            startDay: "30/03/2022",
+            endDay: "30/03/2022",
+            // teach: teachers.name,
+            listLearner: "fsdhfjdshfhdskfjhdsjhfjkdshfkdjshfkjdhsjfhhfjdshfkjsdhfkjhdskjfhdjsfjkdshfkjsdhfkjhsdkjfhkjdshfkjdshfjkhdsjkfhdsfjhkdjshfkjds",
+            decription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            sdt: "012345678",
+            email: "abc@gmail.com",
+            list: "nguyễn văn a-187it2345",
+            image: "../images/logo-01.png"
+
+        },
+
+        {
+            id: "3",
+            nameCourse: "Bngular",
+            statusCourse: "Done",
+            startDay: "30/03/2022",
+            endDay: "30/03/2022",
+            // teach: teachers.name,
+            listLearner: "fsdhfjdshfhdskfjhdsjhfjkdshfkdjshfkjdhsjfhhfjdshfkjsdhfkjhdskjfhdjsfjkdshfkjsdhfkjhsdkjfhkjdshfkjdshfjkhdsjkfhdsfjhkdjshfkjds",
+            decription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            sdt: "012345678",
+            email: "abc@gmail.com",
+            list: "nguyễn văn a-187it2345",
+            image: "../images/logo-01.png"
+
+        },
+
+        {
+            id: "4",
             nameCourse: "Angular",
             statusCourse: "Done",
             startDay: "30/03/2022",
@@ -104,15 +157,40 @@ function closeShow() {
 // mã hóa hình ảnh thành base64
 var input = document.querySelector('input[type=file]');
 input.onchange = function () {
-  var file = input.files[0],
-    reader = new FileReader();
+    var file = input.files[0],
+        reader = new FileReader();
 
-  reader.onloadend = function () {
-   
-    var b64 = reader.result.replace(/^data:.+;base64,/, '');
-    console.log(b64); 
-  };
+    reader.onloadend = function () {
 
-  reader.readAsDataURL(file);
+        var b64 = reader.result.replace(/^data:.+;base64,/, '');
+        console.log(b64);
+    };
+
+    reader.readAsDataURL(file);
 };
 
+
+
+
+$(document).ready(function () {
+
+    var readURL = function (input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.profile-pic').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $(".file-upload").on('change', function () {
+        readURL(this);
+    });
+
+    $(".upload-button").on('click', function () {
+        $(".file-upload").click();
+    });
+});

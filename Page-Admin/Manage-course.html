@@ -246,11 +246,18 @@
 
               <div class="form-group">
                 <label for="inputImage">Hình Ảnh</label>
-                <input type="file" id="inputImage" name="inputImage">
+                <!-- <input type="file" id="inputImage" name="inputImage"> -->
+                <div class="avatar-wrapper">
+                  <img class="profile-pic" src="" />
+                  <div class="upload-button">
+                    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                  </div>
+                  <input class="file-upload" type="file" accept="image/*"/>
+                </div>
 
 
               </div>
-              <br>
+             
 
               <div class="form-group">
                 <label for="inputDer">Mô Tả</label>

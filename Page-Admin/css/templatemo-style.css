@@ -788,16 +788,16 @@ input[type="radio"] {
 }
 
 /* ===============================error================== */
-.container1{
+.container1 {
   height: 100%;
   width: 100%;
   transform: translateY(50%);
   text-align: center;
   color: #343434;
-  
+
 }
 
-.container1 h1{
+.container1 h1 {
   color: #f5f5f5;
   font-size: 160px;
   margin: 0;
@@ -808,21 +808,21 @@ input[type="radio"] {
   -webkit-background-clip: text;
 }
 
-.container1 h2{
+.container1 h2 {
   font-size: 30px;
   font-weight: bold;
   color: #f5f5f5;
 }
 
-.container1 p{
+.container1 p {
   font-size: 20px;
   font-weight: bold;
   color: #f5f5f5;
 }
 
-.btn{
- 
-  
+.btn {
+
+
   background-color: #f5f5f5;
   text-decoration: none;
   color: #000;
@@ -832,7 +832,7 @@ input[type="radio"] {
   transition: all 0.7s;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #39adb4;
   color: #f5f5f5;
 }
@@ -849,12 +849,12 @@ input[type="radio"] {
   left: 0;
   bottom: 0;
   z-index: 10;
-  padding: 3% 33%;
+  padding: 0 33%;
   display: none;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-#showmore{
+#showmore {
   position: fixed;
   top: 0;
   right: 0;
@@ -864,8 +864,79 @@ input[type="radio"] {
   padding: 10% 33%;
   display: none;
   background-color: rgba(0, 0, 0, 0.4);
- 
+
 }
+
+/* ---------------------------------upload image-------------------------------------- */
+.avatar-wrapper {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 1px 15px -5px black;
+  transition: all .3s ease;
+}
+
+.upload-button .fa-arrow-circle-up{
+ 
+  font-size: 183px !important;
+}
+
+.avatar-wrapper:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.avatar-wrapper:hover .profile-pic {
+  opacity: .5;
+}
+
+.profile-pic {
+  height: 100%;
+  width: 100%;
+  transition: all .3s ease;
+}
+
+.profile-pic:after {
+  font-family: FontAwesome;
+  content: "\f007";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 100px;
+  background: #ecf0f1;
+  color: #34495e;
+  text-align: center;
+}
+
+.upload-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.upload-button .fa-arrow-circle-up {
+  position: absolute;
+  font-size: 234px;
+  top: -17px;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  transition: all .3s ease;
+  color: #34495e;
+}
+
+.upload-button:hover .fa-arrow-circle-up {
+  opacity: .9;
+}
+
+
 
 
 /* 8. Media Queries
