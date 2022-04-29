@@ -19,9 +19,9 @@ function getAPI(urlAPI) {
         }
         // delete
         $scope.delete = function () {
-            $scope.listCourses.splice($scope.index, 1);
-            $scope.cancel();
+            $scope.listCourses.splice($scope.test);
         }
+        
         $scope.cancel = function () {
             $scope.test = {};
         }
@@ -61,3 +61,38 @@ app.factory('Excel', function ($window) {
     };
 })
 
+
+
+function openForm() {
+    document.getElementById("add-edit").style.display = "inline";
+    document.getElementById("update").style.display = "none";
+}
+
+function openFormDemo() {
+    document.getElementById("add-edit").style.display = "inline";
+    document.getElementById("add").style.display = "none";
+    document.getElementById("update").style.display = "inline";
+}
+
+
+
+function closeForm() {
+    document.getElementById("add-edit").style.display = "none";
+}
+
+
+
+// mã hóa hình ảnh thành base64
+var input = document.querySelector('input[type=file]');
+input.onchange = function () {
+  var file = input.files[0],
+    reader = new FileReader();
+
+  reader.onloadend = function () {
+   
+    var b64 = reader.result.replace(/^data:.+;base64,/, '');
+    console.log(b64); 
+  };
+
+  reader.readAsDataURL(file);
+};

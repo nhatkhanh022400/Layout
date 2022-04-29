@@ -17,9 +17,9 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
     }
     // delete
     $scope.delete = function () {
-        $scope.listCourses.splice($scope.index, 1);
-        $scope.cancel();
+        $scope.listCourses.splice($scope.test);
     }
+    
     $scope.cancel = function () {
         $scope.test = {};
     }

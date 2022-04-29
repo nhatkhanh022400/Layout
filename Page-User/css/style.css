@@ -27,7 +27,7 @@ section {
 .btn {
   display: inline-block;
   margin-top: 1rem;
-  padding: 1rem 3rem;
+  padding: 0.5rem 2rem;
   font-size: 23px;
   background: linear-gradient(to right, #03effe, #026be2);
   position: relative;

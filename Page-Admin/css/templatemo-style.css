@@ -837,27 +837,36 @@ input[type="radio"] {
   color: #f5f5f5;
 }
 
+
+
 /* ====================================pop-up============================================= */
+
+
 #add-edit {
   position: fixed;
-  left: 0;
+  top: 0;
   right: 0;
+  left: 0;
   bottom: 0;
-  top: -1rem;
   z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.445);
-
+  padding: 3% 33%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-#add-edit:target {
-  opacity: 1;
-  visibility: visible;
+#showmore{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 10% 33%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+ 
 }
+
 
 /* 8. Media Queries
 ------------------------------*/
