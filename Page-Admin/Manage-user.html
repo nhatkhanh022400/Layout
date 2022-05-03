@@ -12,6 +12,9 @@
     Visual Admin Template
     http://www.templatemo.com/preview/templatemo_455_visual_admin
     -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +61,7 @@
           <li><a href="Manage-teacher.html"><i class="fa fa-sliders fa-fw"></i>Quản Lý Giảng Viên</a></li>
           <li><a href="Update-infor.html"><i class="fa fa-sliders fa-fw"></i>Cập Nhật Thông Tin</a>
           </li>
-          <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+          <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Đăng Xuất</a></li>
         </ul>
       </nav>
     </div>
@@ -81,12 +84,12 @@
         <div class="input-group" style="margin-bottom: 10px;">
           <button type="submit" class="fa fa-search"></button>
           <input ng-model="searching" type="text" class="form-control" placeholder="Search" name="srch-term"
-            id="srch-term" style="width: 300px;">
+            id="srch-term" style="width: 300px; font-size: 14px;">
         </div>
 
         <a href="#">
           <button
-          ng-click="exportToExcel('#tableToExport')" style="display: inline-block;  border-radius: 5px; background-color:#39adb4; color: white; padding: 10px; border: transparent; ">Xuất
+          ng-click="exportToExcel('#tableToExport')" style="display: inline-block;  border-radius: 5px; background-color:#39adb4; color: white; padding: 10px; border: transparent; font-size: 14px;">Xuất
             Danh Sách Ra Excel</button>
         </a>
 
@@ -111,7 +114,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="course in listCourses | filter: searching">
+              <tr ng-repeat="course in listCourses | filter: searching" style="text-align: center;">
                 <td>{{$index + 1}}</td>
                 <td>{{course.name}}</td>
                 <td>{{course.phone}}</td>
@@ -119,7 +122,7 @@
                 <td>{{course.department}}</td>
                 <td><input type="image"></td>
                 
-                <td style="text-align: center;"><a ng-click="delete()" href="" class="templatemo-edit-btn">Xóa</a></td>
+                <td style="text-align: center;"><button ng-click="delete()" class="buttom-delete"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
               </tr>
 
             </tbody>

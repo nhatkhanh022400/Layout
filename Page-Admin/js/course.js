@@ -1,9 +1,7 @@
 var app = angular.module("myapp", []);
-app.controller("viewCril", function (Excel, $timeout, $scope) {
+app.controller("viewCril", function (Excel, Excel1, $timeout, $scope) {
     $scope.test = {};
     $scope.index = -1;
-
-
 
     // add
     $scope.save = function () {
@@ -19,10 +17,8 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
     }
     // delete
     $scope.delete = function () {
-        $scope.listCourses.splice($scope.test.id);
+        $scope.listCourses.splice($scope.test);
     }
-
-
     $scope.cancel = function () {
         $scope.test = {};
     }
@@ -40,61 +36,12 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
 
     $scope.listCourses = [
         {
-            id: "1",
-            nameCourse: "Cngular",
-            statusCourse: "Done",
-            startDay: "30/03/2022",
-            endDay: "30/03/2022",
-            // teach: teachers.name,
-            listLearner: "fsdhfjdshfhdskfjhdsjhfjkdshfkdjshfkjdhsjfhhfjdshfkjsdhfkjhdskjfhdjsfjkdshfkjsdhfkjhsdkjfhkjdshfkjdshfjkhdsjkfhdsfjhkdjshfkjds",
-            decription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            sdt: "012345678",
-            email: "abc@gmail.com",
-            list: "nguyễn văn a-187it2345",
-            image: "../images/logo-01.png"
-
-        },
-
-        {
-            id: "2",
-            nameCourse: "Dngular",
-            statusCourse: "Done",
-            startDay: "30/03/2022",
-            endDay: "30/03/2022",
-            // teach: teachers.name,
-            listLearner: "fsdhfjdshfhdskfjhdsjhfjkdshfkdjshfkjdhsjfhhfjdshfkjsdhfkjhdskjfhdjsfjkdshfkjsdhfkjhsdkjfhkjdshfkjdshfjkhdsjkfhdsfjhkdjshfkjds",
-            decription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            sdt: "012345678",
-            email: "abc@gmail.com",
-            list: "nguyễn văn a-187it2345",
-            image: "../images/logo-01.png"
-
-        },
-
-        {
-            id: "3",
-            nameCourse: "Bngular",
-            statusCourse: "Done",
-            startDay: "30/03/2022",
-            endDay: "30/03/2022",
-            // teach: teachers.name,
-            listLearner: "fsdhfjdshfhdskfjhdsjhfjkdshfkdjshfkjdhsjfhhfjdshfkjsdhfkjhdskjfhdjsfjkdshfkjsdhfkjhsdkjfhkjdshfkjdshfjkhdsjkfhdsfjhkdjshfkjds",
-            decription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            sdt: "012345678",
-            email: "abc@gmail.com",
-            list: "nguyễn văn a-187it2345",
-            image: "../images/logo-01.png"
-
-        },
-
-        {
-            id: "4",
             nameCourse: "Angular",
             statusCourse: "Done",
             startDay: "30/03/2022",
             endDay: "30/03/2022",
             // teach: teachers.name,
-            listLearner: "fsdhfjdshfhdskfjhdsjhfjkdshfkdjshfkjdhsjfhhfjdshfkjsdhfkjhdskjfhdjsfjkdshfkjsdhfkjhsdkjfhkjdshfkjdshfjkhdsjkfhdsfjhkdjshfkjds",
+            listLearner: "Hồng Vĩnh Đạt, Nguyễn đăng Nhân, trần nhật khánh, vũ đăng khoa,hồ quý ly, hooff minbh long, tiệu vy , Lưu Thị Ngọc, Nguyễn Văn,Trần VănHồ Mộng,Huỳnh Văn,Triệu Sà,Nguyễn Thanh, Huỳnh Văn ,Nguyễn Trần, Nguyễn Văn, Nguyễn Chánh, Lê Nguyễn Thu,Lâm Thị Bích,Nguyễn Văn,Nguyễn ,Thụy Khánh",
             decription: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             sdt: "012345678",
             email: "abc@gmail.com",
@@ -107,11 +54,19 @@ app.controller("viewCril", function (Excel, $timeout, $scope) {
 
 
 
-    //Xuất Excel
+    //Xuất Excel nguyên bảng
     $scope.exportToExcel = function (tableId) { // ex: '#my-table'
-        var exportHref = Excel.tableToExcel(tableId, 'WireWorkbenchDataExport');
+        var exportHref = Excel.tableToExcel(tableId, 'Danh sách khóa học');
         $timeout(function () { location.href = exportHref; }, 100); // trigger download
     }
+
+
+    $scope.exportToLearner = function (tableId) { // ex: '#my-table'
+        var exportHref = Excel1.tableToLearner(tableId, 'WireWorkbenchDataExport');
+        $timeout(function () { location.href = exportHref; }, 100); // trigger download
+    }
+    
+    
 })
 
 
@@ -131,9 +86,26 @@ app.factory('Excel', function ($window) {
 })
 
 
+app.factory('Excel1', function ($window) {
+    var uri = 'data:application/vnd.ms-excel;base64,',
+        template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+        base64 = function (s) { return $window.btoa(unescape(encodeURIComponent(s))); },
+        format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) };
+    return {
+        tableToLearner: function (tableId, worksheetName) {
+            var table = $(tableId),
+                ctx = { worksheet: worksheetName, table: table.html() },
+                href = uri + base64(format(template, ctx));
+            return href;
+        }
+    };
+})
+
+
 function openForm() {
     document.getElementById("add-edit").style.display = "inline";
     document.getElementById("update").style.display = "none";
+    document.getElementById("add").style.display = "inline";
 }
 
 function openFormDemo() {
@@ -157,16 +129,16 @@ function closeShow() {
 // mã hóa hình ảnh thành base64
 var input = document.querySelector('input[type=file]');
 input.onchange = function () {
-    var file = input.files[0],
-        reader = new FileReader();
+  var file = input.files[0],
+    reader = new FileReader();
 
-    reader.onloadend = function () {
+  reader.onloadend = function () {
+   
+    var b64 = reader.result.replace(/^data:.+;base64,/, '');
+    console.log(b64); 
+  };
 
-        var b64 = reader.result.replace(/^data:.+;base64,/, '');
-        console.log(b64);
-    };
-
-    reader.readAsDataURL(file);
+  reader.readAsDataURL(file);
 };
 
 
@@ -194,3 +166,4 @@ $(document).ready(function () {
         $(".file-upload").click();
     });
 });
+

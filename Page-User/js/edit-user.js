@@ -1,4 +1,3 @@
-
 document.getElementById('btn1').addEventListener('click', (Event) => {
     Event.preventDefault();
     Swal.fire(

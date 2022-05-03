@@ -12,6 +12,9 @@
     Visual Admin Template
     http://www.templatemo.com/preview/templatemo_455_visual_admin
     -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +59,7 @@
           <li><a href="#" class="active"><i class="fa fa-sliders fa-fw"></i>Quản Lý Giảng Viên</a></li>
           <li><a href="Update-infor.html"><i class="fa fa-sliders fa-fw"></i>Cập Nhật Thông Tin</a>
           </li>
-          <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+          <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Đăng Xuất</a></li>
         </ul>
       </nav>
     </div>
@@ -77,21 +80,21 @@
         </div>
       </div>
 
-      <form class="templatemo-search-form" role="search" style="transform: translate(40px, 30px);">
+      <form class="templatemo-search-form" role="search" style="transform: translate(0px, 30px);">
         <div class="input-group" style="margin-bottom: 10px;">
           <button type="submit" class="fa fa-search"></button>
           <input ng-model="searching" type="text" class="form-control" placeholder="Search" name="srch-term"
-            id="srch-term" style="width: 300px;">
+            id="srch-term" style="width: 289px;">
         </div>
 
         <a href="#">
           <button ng-click="exportToExcel('#tableToExport')"
-            style="display: inline-block;  border-radius: 5px; background-color:#39adb4; color: white; padding: 10px; border: transparent; ">Xuất
+            style="display: inline-block;  border-radius: 5px; background-color:#39adb4; color: white; padding: 10px; border: transparent; font-size: 14px; margin-right: 15px;">Xuất
             Danh Sách Ra Excel</button>
         </a>
 
         <button onclick="openForm()"
-          style="display: inline-block; border-radius: 5px; background-color:#39adb4; color: white; padding: 10px; border: transparent; color: #fff;">
+          style="display: inline-block; border-radius: 5px; background-color:#39adb4; color: white; padding: 10px; border: transparent; color: #fff; font-size: 14px;">
           Thêm Giảng Viên
         </button>
 
@@ -182,25 +185,19 @@
                     </div>
 
 
-                  </div>
-
-
 
                   <div class="form-group">
-                    <button id="add" onclick="closeForm()" ng-click="save()" style="color: white;" type="submit"
-                      class="templatemo-blue-button">
+                    <button id="add" onclick="closeForm()" ng-click="save()" style="color: white;" type="submit" class="templatemo-blue-button">
                       Thêm
                       <!-- <a href="#">Thêm</a> -->
                     </button>
 
-                    <button id="update" onclick="closeForm()" ng-click="update()" style="color: white;" type="submit"
-                      class="templatemo-blue-button">
+                    <button id="update" onclick="closeForm()" ng-click="update()" style="color: white;" type="submit" class="templatemo-blue-button">
                       Cập Nhật
                     </button>
 
-                    <button class="templatemo-blue-button" type="submit" onclick="closeForm()" ng-click="cancel()"
-                      style="color: white;">
-                      Cancel
+                    <button class="templatemo-blue-button" type="submit" onclick="closeForm()" ng-click="cancel()" style="color: white;">
+                     Cancel
                     </button>
                   </div>
                 </form>
@@ -240,7 +237,6 @@
         });
         getAPI();
       </script>
-
 
 
 </body>
