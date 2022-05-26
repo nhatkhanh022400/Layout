@@ -1,0 +1,28 @@
+.container1 {
+    height: 100%;
+    width: 100%;
+    transform: translateY(50%);
+    text-align: center;
+    color: #343434;
+
+}
+
+.container1 h1 {
+    font-size: 160px;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 20px;
+    background: center no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.container1 h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container1 p {
+    font-size: 20px;
+    font-weight: bold;
+}
